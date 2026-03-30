@@ -1,0 +1,35 @@
+# Build output
+/bin/
+/obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+
+# VS Code files
+.vscode/
+
+# Rider files
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# User settings
+**/Properties/launchSettings.json
+*.csproj.user
+
+# NuGet packages
+/packages/
+*.nupkg
+
+# Test results
+/TestResults/
+
+# Logs
+*.log
+
+# Publish
+/publish/

@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "pzCgkFQkGaY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sergey\\OneDrive\\Документы\\Уник\\4 семестр\\Программирование корпоративных систем\\KR_2\\pks_kr2\\pks_kr2\\pks_kr2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sergey\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\sergey\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\sergey\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\sergey\\.nuget\\packages\\system.net.nameresolution\\4.3.0\\system.net.nameresolution.4.3.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference System.Net.NameResolution will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "C:\\Users\\sergey\\OneDrive\\Документы\\Уник\\4 семестр\\Программирование корпоративных систем\\KR_2\\pks_kr2\\pks_kr2\\pks_kr2.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\sergey\\OneDrive\\Документы\\Уник\\4 семестр\\Программирование корпоративных систем\\KR_2\\pks_kr2\\pks_kr2\\pks_kr2.csproj",
+      "libraryId": "System.Net.NameResolution",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    }
+  ]
+}

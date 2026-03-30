@@ -1,0 +1,115 @@
+﻿<Window x:Class="pks_kr2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="pks_kr2" Height="700" Width="1000"
+        WindowStartupLocation="CenterScreen">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Заголовок -->
+        <TextBlock Text="Сетевой анализатор" FontSize="20" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,10"/>
+        
+        <!-- Основной контент -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <!-- Левая панель - Сетевые интерфейсы -->
+            <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Text="Сетевые интерфейсы" FontSize="16" FontWeight="Bold" 
+                               Margin="0,0,0,10"/>
+                    
+                    <ListBox x:Name="InterfacesListBox" Grid.Row="1" 
+                             SelectionChanged="InterfacesListBox_SelectionChanged"
+                             DisplayMemberPath="DisplayName"/>
+                    
+                    <ScrollViewer Grid.Row="2" MaxHeight="300" Margin="0,10,0,0">
+                        <StackPanel x:Name="InterfaceInfoPanel">
+                            <TextBlock Text="Информация об интерфейсе:" FontWeight="Bold" 
+                                       Margin="0,0,0,5"/>
+                            <TextBlock x:Name="IpAddressText" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="SubnetMaskText" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="MacAddressText" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="StatusText" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="SpeedText" TextWrapping="Wrap"/>
+                            <TextBlock x:Name="InterfaceTypeText" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+            
+            <!-- Правая панель - Анализ URL -->
+            <Border Grid.Column="1" BorderBrush="Gray" BorderThickness="1" Margin="5" Padding="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Text="Анализ URL/URI" FontSize="16" FontWeight="Bold" 
+                               Margin="0,0,0,10"/>
+                    
+                    <TextBlock Grid.Row="1" Text="Введите URL:" Margin="0,5"/>
+                    <TextBox x:Name="UrlTextBox" Grid.Row="2" Margin="0,5"/>
+                    
+                    <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,10">
+                        <Button x:Name="AnalyzeButton" Content="Анализировать URL" 
+                                Click="AnalyzeButton_Click" Width="120" Margin="0,0,10,0"/>
+                        <Button x:Name="PingButton" Content="Пинг хоста" 
+                                Click="PingButton_Click" Width="100" Margin="0,0,10,0"/>
+                        <Button x:Name="DnsButton" Content="DNS информация" 
+                                Click="DnsButton_Click" Width="120"/>
+                    </StackPanel>
+                    
+                    <TextBlock Grid.Row="4" Text="Результаты анализа:" FontWeight="Bold" 
+                               Margin="0,10,0,5"/>
+                    
+                    <ScrollViewer Grid.Row="5">
+                        <TextBox x:Name="ResultsTextBox" TextWrapping="Wrap" 
+                                 IsReadOnly="True" AcceptsReturn="True"
+                                 VerticalScrollBarVisibility="Auto" MinHeight="200"/>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+        
+        <!-- Нижняя панель - История -->
+        <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1" Margin="5" Padding="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="История проверенных URL:" FontWeight="Bold" 
+                               Margin="0,0,10,0"/>
+                    <Button x:Name="ClearHistoryButton" Content="Очистить историю" 
+                            Click="ClearHistoryButton_Click" Width="100"/>
+                </StackPanel>
+                
+                <ListBox x:Name="HistoryListBox" Grid.Row="1" Margin="0,5,0,0" 
+                         SelectionChanged="HistoryListBox_SelectionChanged"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
