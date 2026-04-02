@@ -24,7 +24,6 @@ namespace pks_kr2
         {
             InitializeComponent();
             
-            // Находим элементы по имени
             _interfacesListBox = (ListBox)FindName("InterfacesListBox");
             _urlTextBox = (TextBox)FindName("UrlTextBox");
             _resultsTextBox = (TextBox)FindName("ResultsTextBox");
